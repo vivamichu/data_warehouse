@@ -1,4 +1,4 @@
-# dset
+# dset: where food for your model lives rent free
 
 > One line to load any ML dataset, anywhere. No more "register, click EULA, unzip, write a Dataset class" 17 times a year.
 
