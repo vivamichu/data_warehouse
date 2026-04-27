@@ -1,0 +1,15 @@
+name: food-101
+version: "1.0"
+task: classification
+license: MIT
+citation: "Bossard et al., Food-101 – Mining Discriminative Components with Random Forests, ECCV 2014"
+source:
+  type: huggingface
+  repo: food101
+adapter:
+  name: hf_passthrough
+  config:
+    repo: food101
+    image_key: image
+    label_key: label
+    task: classification

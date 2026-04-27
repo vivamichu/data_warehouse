@@ -1,0 +1,15 @@
+name: cifar-10
+version: "1.0"
+task: classification
+license: MIT
+citation: "Krizhevsky, A. (2009). Learning Multiple Layers of Features from Tiny Images."
+source:
+  type: huggingface
+  repo: uoft-cs/cifar10
+adapter:
+  name: hf_passthrough
+  config:
+    repo: uoft-cs/cifar10
+    image_key: img
+    label_key: label
+    task: classification

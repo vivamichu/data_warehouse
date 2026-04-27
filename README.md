@@ -3,8 +3,10 @@
 > One line to load any ML dataset, anywhere. No more "register, click EULA, unzip, write a Dataset class" 17 times a year.
 
 [![CI](https://github.com/vivamichu/data_warehouse/actions/workflows/ci.yml/badge.svg)](https://github.com/vivamichu/data_warehouse/actions/workflows/ci.yml)
+[![PyPI version](https://img.shields.io/pypi/v/dset.svg)](https://pypi.org/project/dset/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Stars](https://img.shields.io/github/stars/vivamichu/data_warehouse?style=social)](https://github.com/vivamichu/data_warehouse)
 
 ```python
 from dset import load
@@ -46,8 +48,7 @@ ChestX-ray14, ...) is still a manual mess.
 ## Install
 
 ```bash
-pip install -e .              # from a clone
-# pip install dset            # (PyPI release coming)
+pip install dset
 
 # Optional extras
 pip install dset[hf]          # HuggingFace source
@@ -115,6 +116,15 @@ adapter:
 **Adding a new dataset = writing one YAML file.** Adding a new on-disk format
 = one Python class. That's the whole architecture.
 
+## Try it in your browser
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vivamichu/data_warehouse/blob/main/examples/demo.ipynb)
+
+The demo notebook loads three datasets (CIFAR-10, Food-101, Oxford Pets) and shows
+`(image, label)` samples — no local install needed.
+
+
+
 ## What ships today
 
 | Source types | Adapters | CLI | Tests |
@@ -123,15 +133,16 @@ adapter:
 
 | Bundled manifests |
 |---|
-| oxford-pets, hymenoptera, isic-2019, mnist, carvana, coco-2017-val |
+| oxford-pets · hymenoptera · isic-2019 · mnist · carvana · coco-2017-val |
+| cifar-10 · cifar-100 · food-101 · flowers-102 |
 
 ## Roadmap
 
-**v0.1 (next)**
-- [ ] PyPI release
+**v0.1 ✅**
+- [x] PyPI release
 - [ ] Google Drive source (with virus-scan interstitial handling)
 - [ ] `dset gc` for LRU eviction by total cache size
-- [ ] 25 more bundled manifests across CV
+- [x] More bundled manifests across CV (cifar-10, cifar-100, food-101, flowers-102)
 - [ ] Optional content-addressed dedup (sha256 cache keys)
 
 **v0.2**
