@@ -1,0 +1,18 @@
+name: carvana-image-masking
+version: "1.0"
+task: segmentation
+license: Competition-Use-Only
+citation: "Carvana Image Masking Challenge, Kaggle 2017"
+source:
+  type: kaggle
+  competition: carvana-image-masking-challenge
+  files: [train.zip, train_masks.zip]
+post_fetch:
+  - extract: "*.zip"
+adapter:
+  name: mask_segmentation
+  config:
+    images_dir: train/
+    masks_dir: train_masks/
+    image_ext: .jpg
+    mask_ext: _mask.gif

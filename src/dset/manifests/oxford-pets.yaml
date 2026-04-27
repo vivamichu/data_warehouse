@@ -1,0 +1,19 @@
+name: oxford-pets
+version: "1.0"
+task: segmentation
+license: CC-BY-SA-4.0
+citation: "Parkhi et al., Cats and Dogs, CVPR 2012"
+source:
+  type: http
+  files:
+    - url: https://www.robots.ox.ac.uk/~vgg/data/pets/data/images.tar.gz
+    - url: https://www.robots.ox.ac.uk/~vgg/data/pets/data/annotations.tar.gz
+post_fetch:
+  - extract: "*.tar.gz"
+adapter:
+  name: mask_segmentation
+  config:
+    images_dir: images/
+    masks_dir: annotations/trimaps/
+    image_ext: .jpg
+    mask_ext: .png

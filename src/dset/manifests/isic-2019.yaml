@@ -1,0 +1,27 @@
+name: isic-2019
+version: "2019.1"
+task: classification
+license: CC-BY-NC-4.0
+citation: |
+  Tschandl et al., 2018; Codella et al., 2018; Combalia et al., 2019
+source:
+  type: http
+  auth:
+    kind: registration
+    eula_url: https://challenge.isic-archive.com/landing/2019/
+    prompt: |
+      ISIC 2019 requires accepting the challenge terms.
+      Visit the URL above to review the terms before continuing.
+  files:
+    - url: https://isic-challenge-data.s3.amazonaws.com/2019/ISIC_2019_Training_Input.zip
+    - url: https://isic-challenge-data.s3.amazonaws.com/2019/ISIC_2019_Training_GroundTruth.csv
+post_fetch:
+  - extract: "*.zip"
+adapter:
+  name: csv_classification
+  config:
+    images_dir: ISIC_2019_Training_Input/
+    labels_csv: ISIC_2019_Training_GroundTruth.csv
+    id_column: image
+    label_columns: [MEL, NV, BCC, AK, BKL, DF, VASC, SCC, UNK]
+    image_ext: .jpg

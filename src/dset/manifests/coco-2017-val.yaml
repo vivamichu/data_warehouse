@@ -1,0 +1,17 @@
+name: coco-2017-val
+version: "2017"
+task: segmentation
+license: CC-BY-4.0
+citation: "Lin et al., Microsoft COCO: Common Objects in Context, ECCV 2014"
+source:
+  type: http
+  files:
+    - url: http://images.cocodataset.org/zips/val2017.zip
+    - url: http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+post_fetch:
+  - extract: "*.zip"
+adapter:
+  name: coco_segmentation
+  config:
+    images_dir: val2017/
+    annotations_file: annotations/instances_val2017.json

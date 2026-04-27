@@ -1,0 +1,18 @@
+name: hymenoptera
+version: "1.0"
+task: classification
+license: BSD
+citation: "PyTorch transfer-learning tutorial"
+source:
+  type: http
+  files:
+    - url: https://download.pytorch.org/tutorial/hymenoptera_data.zip
+post_fetch:
+  - extract: "*.zip"
+adapter:
+  name: folder_classification
+  config:
+    base_dir: hymenoptera_data/
+    split_map:
+      train: train
+      val: val

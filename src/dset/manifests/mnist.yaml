@@ -1,0 +1,15 @@
+name: mnist
+version: "1.0"
+task: classification
+license: CC-BY-SA-3.0
+citation: "LeCun et al."
+source:
+  type: huggingface
+  repo: ylecun/mnist
+adapter:
+  name: hf_passthrough
+  config:
+    repo: ylecun/mnist
+    image_key: image
+    label_key: label
+    task: classification
