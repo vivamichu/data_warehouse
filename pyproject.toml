@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dset"
-version = "0.1.0"
+version = "0.0.1"
 description = "Package manager for ML datasets — one line to load any dataset, anywhere."
 readme = "README.md"
 license = {text = "MIT"}
